@@ -1,3 +1,36 @@
+# large data file
+*.gpickle
+*.graph
+*.mat
+*.dgl
+.DS_Store
+*.npy
+core
+.vscode/
+.idea/
+*.mps
+wandb/
+results/
+.psync
+*.out
+*.pt
+*.npy
+*.pkl
+*.ipynb_checkpoints
+.ipynb
+*.pdf
+*.png
+*.whl
+*.tar.gz
+
+# hydra related
+multirun/
+outputs/
+
+# tensorboard related
+events.out*
+runs/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

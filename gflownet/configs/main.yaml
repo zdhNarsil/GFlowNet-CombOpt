@@ -1,0 +1,64 @@
+defaults:
+  - override hydra/launcher: submitit_slurm
+
+task: mis
+input: rb200-300
+wandb: 0
+d: 0  # -1 for cpu
+seed: 0
+print_freq: 3
+wandb_freq: null
+eval: false
+eval_freq: 200
+
+# for GIN
+arch: gin
+hidden_dim: 256
+hidden_layer: 5
+dropout: 0.
+aggr: sum
+learn_eps: true
+
+# GFlowNet algorithm
+alg: fl
+onpolicy: true
+epochs: 20
+trainsize: 4000
+testsize: 500
+tstep: 30
+bsit: 8
+bs: 64
+tbs: 30
+shuffle: true # for train loader
+num_workers: 4 # for dataloader
+sameg: false # use same graph across one batch
+tranbuff_size: 1000000  # could be 10,000,000
+
+lr: 1e-3
+zlr: 1e-3
+randp: 0.
+lc: 1 # leaf_coef, for db
+
+# Reward shaping
+anneal: linear  # none, linear
+annend: 40000
+rexp: 5e2 # reward_exp
+rexpit: 1
+
+
+hydra:
+  run:
+    dir: ./outputs/${now:%Y.%m.%d}/${now:%H.%M.%S}
+  sweep:
+    dir: ${oc.env:HOME}/scratch/${now:%Y.%m.%d}/${now:%H.%M.%S}
+    subdir: ${hydra.job.override_dirname}
+
+  launcher:
+    timeout_min: 1440 # 1 day
+    name: ${hydra.job.name}
+    partition: long
+    mem_gb: 32
+    nodes: 1
+    gpus_per_node: 1
+    cpus_per_task: 5
+    tasks_per_node: 1
