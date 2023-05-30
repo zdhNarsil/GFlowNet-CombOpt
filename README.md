@@ -6,7 +6,7 @@ Pytorch implementation for our paper
 [Dinghuai Zhang](https://zdhnarsil.github.io/), [Hanjun Dai](https://hanjun-dai.github.io/), Nikolay Malkin, Aaron Courville, [Yoshua Bengio](https://yoshuabengio.org/), [Ling Pan](https://ling-pan.github.io/).
 
 <!-- <p align="center"> -->
-<img src="https://s1.ax1x.com/2023/05/30/p9jE7P1.png" border="0" width=40% class="center" />
+<img src="https://s1.ax1x.com/2023/05/30/p9jE7P1.png" border="0" width=60% class="center" />
 <!-- </p> -->
 
 We formulate a set of graph combinatorial optimization problems as sequential decision-making sampling problems,
