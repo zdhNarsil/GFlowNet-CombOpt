@@ -1,5 +1,6 @@
 # GFlowNet-CombOpt
-Pytorch implementation for our paper "Let the Flows Tell: Solving Graph Combinatorial Optimization Problems with GFlowNets".
+Pytorch implementation for our paper 
+[Let the Flows Tell: Solving Graph Combinatorial Optimization Problems with GFlowNets](https://arxiv.org/abs/2305.17010).
 
 ## Data generation
 
